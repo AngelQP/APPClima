@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APP Weather</title>
+    <link
+      rel="shortcut icon"
+      href="./icons/snow-outline.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a class="name-title" href="">
+          <h1 class="title">APP de Clima</h1>
+          <span class="icon-title">
+            <ion-icon name="logo-tableau"></ion-icon>
+          </span>
+        </a>
+
+        <div class="nav-api">
+          <a class="icon-api" href="https://openweathermap.org/api" target="_blank">
+            <ion-icon name="logo-apple-ar"></ion-icon>
+          </a>
+          <p>Conoce el API</p>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+
+      <div class="container">
+
+        <form id="searchForm" class="header-searchForm">
+          <div class="search">
+            <input class="input-search normal" type="country" name="city" placeholder="Ciudad o País" 
+            aria-label='Search for a country' aria-autocomplete='both' aria-controls='autocomplete-results' autocomplete="off" autofocus/>
+            <button id="searchBtn" type="submit">🔍</button>
+          </div>
+          <div class="results">
+            <ul class="hidden" role='listbox' aria-label='Search for a country'>
+          </div>
+          </ul>
+        </form>
+
+        <div class="print-error"></div>
+
+        <div class="container-cards" id="container-cards">
+
+          <div class="container-cards-weather">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <!-- Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- /Icons -->
+
+    <script type="module" src="./src/eventInput.js"></script>
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>

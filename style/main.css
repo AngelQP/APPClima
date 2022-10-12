@@ -1,0 +1,397 @@
+:root {
+  --var-color1: #120907;
+  --var-color2: #1e2238;
+  --var-color3: #555b89;
+  --var-color4: #b3b5e2;
+  --var-color5: #d5d8ed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 62.5%;
+  color: whitesmoke;
+}
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+/* https://www.pexels.com/photos/snowy-forest-235621/ */
+body {
+  position: relative;
+  min-height: 100vh;
+  background: url(https://images.pexels.com/photos/259620/pexels-photo-259620.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(2px);
+  /* backdrop-filter: contrast(0.85); */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* Barra de navegación */
+nav {
+  width: 100%;
+  height: 150px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.name-title {
+  display: flex;
+  justify-self: self-start;
+  gap: 10px;
+
+  /* margin: 0 auto; */
+}
+.title {
+  font-size: 2.5rem;
+}
+.icon-title {
+  font-size: 3rem;
+}
+.nav-api {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  /* margin: 0 auto; */
+}
+.icon-api {
+  font-size: 2.5rem;
+}
+.nav-api p {
+  font-size: 1.5rem;
+}
+/* /Barra de navegación */
+
+/* Formulario */
+.header-searchForm {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  z-index: 10;
+}
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header-searchForm .input-search {
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.8rem;
+  padding: 10px;
+  color: #333;
+  outline: none;
+}
+.header-searchForm .normal::placeholder {
+  color: #333;
+}
+.header-searchForm .normal:focus {
+  border: 3px solid var(--var-color4);
+}
+
+.header-searchForm .alert::placeholder {
+  color: #ffc107b4;
+}
+.header-searchForm .alert:focus {
+  border: 3px solid #ffc107b4;
+}
+
+.print-error {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.header-searchForm button {
+  width: 20%;
+  max-width: 60px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  /* border: 2px solid var(--var-color4); */
+  background-color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.header-searchForm button:hover {
+  border: 3px solid var(--var-color4);
+}
+/* /Formulario */
+
+/* Container-cards */
+
+.container-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  /* flex-wrap: wrap; */
+}
+
+/* /Container-cards */
+
+/* Card-main */
+.card-main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 25px 0;
+  color: white;
+  z-index: 10;
+}
+
+.card-main--content {
+  display: inline-block;
+  width: 380px;
+  min-height: auto;
+  margin: 10px 10px;
+  padding: 20px 15px;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  /* filter: blur(10px); */
+  /* backdrop-filter: brightness(65%); */
+
+  border-radius: 5px;
+}
+.date {
+  font-size: 1.5rem;
+}
+.temperature {
+  max-height: 90px;
+  width: 220px;
+  max-width: 380px;
+  font-weight: 700;
+
+  display: flex;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 10px 0;
+}
+.temperature::-webkit-scrollbar {
+  width: 0;
+}
+.temperature-day {
+  min-width: 220px;
+  height: 70px;
+  text-align: center;
+  margin-left: 2px;
+  animation: slidein 8s ease-in-out infinite alternate;
+}
+.temperature-day p{
+  font-size: 1.8rem;
+}
+.temperature-day span {
+  font-size: 2.5rem;
+}
+.description {
+  font-size: 1.4rem;
+}
+
+.card-more-description {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  margin-top: 15px;
+  gap: 10px;
+
+  font-size: 1.2rem;
+  font-weight: 500;  
+
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.card-more-description-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.card-more-description--features {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.mix-icons {
+  display: flex;
+  flex-direction: column;
+  height: 35px;
+  overflow: hidden;
+}
+
+.strong {
+  font-weight: 600;
+}
+.icon {
+  height: 22px;
+  width: 22px;
+  font-size: 2.2rem;
+}
+.icon--mix {
+  font-size: 2.2rem;
+  height: 2.2rem;
+}
+
+.container-cards-weather {
+  width: 100%;
+}
+.card-info-weather {
+  width: 100%;
+  margin-bottom: 10px;
+  /* height: auto; */
+}
+
+.card-info--header {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0 10px;
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+.temperature-header {
+  margin-left: 15px;
+  display: inline-flex;
+  color: white;
+}
+.icon-temperature {
+  height: 22px;
+  width: 22px;
+  display: inline-block;
+  filter: invert(100%);
+}
+
+.deploy-description {
+  background-color: transparent;
+  color: whitesmoke;
+  border: none;
+
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+.inactive {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  height: 30px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+@keyframes slidein {
+  0% {
+    transform: translateX(0px);
+  }
+  19% {
+    transform: translateX(0px);
+  }
+  38% {
+    transform: translateX(-220px);
+  }
+  50% {
+    transform: translateX(-220px);
+  }
+  88% {
+    transform: translateX(-440px);
+  }
+  100% {
+    transform: translateX(-440px);
+  }
+
+}
+
+
+/* Prueba de muestra de informacion*/
+.results {
+  position: relative;
+}
+ul {
+  position: absolute;
+  top: 100%;
+  margin-top: -1px;
+  width: 60%;
+  z-index: 30;
+  background: #b3b5e2;
+  margin: 0;
+  list-style: none;
+  transition: none;
+  padding: 0;
+  border: 1px solid #bfc8c9;
+  font-weight: 600;
+}
+ul li {
+  padding: 6px 12px;
+  transition: 0.2s background;
+  cursor: pointer;
+}
+ul li.selected {
+ background: rgba(0, 0, 0, 1);
+}
+ul li:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+ul li + li {
+  border-top: 1px solid #bfc8c9;
+}
+.hidden {
+  display: none;
+}
+
+.name-main {
+  width: 100%;
+}
+.name-main p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-bottom: 2px solid #bfc8c9;
+}
