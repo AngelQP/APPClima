@@ -27,7 +27,7 @@ async function autocomplete(event) {
   filteredResults = [];
   const value = input.value;
   try {
-    let newApi = `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${APIKey}`;
+    let newApi = `https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${APIKey}`;
     const prueba = await fetch(newApi);
     filteredResults = await prueba.json();
   }catch(e){
